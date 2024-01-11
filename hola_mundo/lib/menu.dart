@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hola_mundo/cronometro.dart';
 import 'package:hola_mundo/equipos.dart';
+import 'package:hola_mundo/jugadores.dart'; // Importa el nuevo archivo
 
 class MenuPage extends StatelessWidget {
   final String username;
@@ -47,7 +48,15 @@ class MenuPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Equipo()),
+                      MaterialPageRoute(
+                        builder: (context) => EquiposApp(equipos: [
+                          Equipo(
+                              nombre: 'Equipo 1', imagen: 'assets/america.png'),
+                          Equipo(
+                              nombre: 'Equipo 2', imagen: 'assets/atlas.png'),
+                          // Agrega los demás equipos de acuerdo a tus necesidades
+                        ]),
+                      ),
                     );
                   },
                   child: Container(
@@ -58,18 +67,19 @@ class MenuPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Image.asset(
-                        'assets/boton2.png'), // Ajusta la ruta de la imagen
+                        'assets/equipo.png'), // Ajusta la ruta de la imagen
                   ),
                 ),
-              ],
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
                 GestureDetector(
                   onTap: () {
-                    // Agrega la redirección para el tercer botón
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => JugadoresApp(
+                            equipo:
+                                'Equipo 3'), // Puedes cambiar al equipo que desees
+                      ),
+                    );
                   },
                   child: Container(
                     width: 100,
@@ -79,9 +89,15 @@ class MenuPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Image.asset(
-                        'assets/boton3.png'), // Ajusta la ruta de la imagen
+                        'assets/jugadores.png'), // Ajusta la ruta de la imagen
                   ),
                 ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
                 GestureDetector(
                   onTap: () {
                     // Agrega la redirección para el cuarto botón
