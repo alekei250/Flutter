@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hola_mundo/cronometro.dart';
-import 'package:hola_mundo/formulario.dart';
 import 'package:hola_mundo/menu.dart';
+import 'package:hola_mundo/formulario.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,18 +21,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class LoginPage extends StatefulWidget {
-  @override
-  _LoginPageState createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
+class LoginPage extends StatelessWidget {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  void _login() {
-    // Puedes agregar lógica de verificación de usuario y contraseña aquí.
-    // En este caso, simplemente redirige al menú.
+  void _login(BuildContext context) {
+    // Simplemente redirige a MenuPage sin verificar usuario y contraseña.
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
@@ -42,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  void _olvidasteContrasena() {
+  void _olvidasteContrasena(BuildContext context) {
     // Redirige a la página de formulario cuando se olvida la contraseña
     Navigator.push(
       context,
@@ -99,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: _login,
+              onPressed: () => _login(context),
               style: ElevatedButton.styleFrom(
                 primary: Color.fromARGB(255, 8, 8, 8),
                 shape: RoundedRectangleBorder(
@@ -110,91 +103,9 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 10),
             TextButton(
-              onPressed: _olvidasteContrasena,
+              onPressed: () => _olvidasteContrasena(context),
               child: Text('¿Olvidaste la contraseña?'),
             ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => EnConstruccionPage()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.purple,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                  child: Text('Nube'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => EnConstruccionPage()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.purple,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                  child: Text('Compartir'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => EnConstruccionPage()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.purple,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                  child: Text('Imprimir'),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class CronometroPage extends StatelessWidget {
-  final String username;
-
-  CronometroPage({required this.username});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Cronómetro'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              '¡Bienvenido, $username!',
-              style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(height: 20),
-            Cronometro(),
           ],
         ),
       ),
