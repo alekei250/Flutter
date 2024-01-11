@@ -1,0 +1,45 @@
+name: hola_mundo
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^6.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/atlas.png
+    - assets/crono.png
+    - assets/america.png
+    - assets/atleticosl.png
+    - assets/cruzazul.png
+    - assets/guadalajara.png
+    - assets/juarez.png
+    - assets/leon.png
+    - assets/mazatlan.png
+    - assets/mexico.png
+    - assets/monterrey.png
+    - assets/necaxa.png
+    - assets/pachuca.png
+    - assets/puebla.png
+    - assets/pumas.png
+    - assets/queretaro.png
+    - assets/santos.png
+    - assets/tigres.png
+    - assets/tijuana.png
+    - assets/toluca.png
+
+
+    
