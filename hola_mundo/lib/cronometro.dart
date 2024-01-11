@@ -128,57 +128,6 @@ class _CronometroState extends State<Cronometro> {
           ],
         ),
         SizedBox(height: 20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => EnConstruccionPage()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.purple,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-              ),
-              child: Text('Nube'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => EnConstruccionPage()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.purple,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-              ),
-              child: Text('Compartir'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => EnConstruccionPage()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.purple,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-              ),
-              child: Text('Imprimir'),
-            ),
-          ],
-        ),
-        SizedBox(height: 20),
         ElevatedButton(
           onPressed: _cerrarSesion,
           style: ElevatedButton.styleFrom(
