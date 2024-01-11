@@ -21,18 +21,29 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
   void _login(BuildContext context) {
-    // Simplemente redirige a MenuPage sin verificar usuario y contraseña.
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => MenuPage(username: _usernameController.text),
-      ),
-    );
+    // Verifica que el usuario y la contraseña sean "usuario" y "contraseña"
+    if (_usernameController.text == '' && _passwordController.text == '') {
+      print('Inicio de sesión exitoso');
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MenuPage(username: _usernameController.text),
+        ),
+      );
+    } else {
+      print('Inicio de sesión fallido');
+      // Puedes mostrar un mensaje de error o realizar alguna otra acción aquí
+    }
   }
 
   void _olvidasteContrasena(BuildContext context) {
@@ -92,7 +103,9 @@ class LoginPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () => _login(context),
+              onPressed: () {
+                _login(context);
+              },
               style: ElevatedButton.styleFrom(
                 primary: Color.fromARGB(255, 8, 8, 8),
                 shape: RoundedRectangleBorder(

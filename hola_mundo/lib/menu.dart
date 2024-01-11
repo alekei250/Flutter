@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hola_mundo/cronometro.dart';
 import 'package:hola_mundo/equipos.dart';
-import 'package:hola_mundo/jugadores.dart'; // Importa el nuevo archivo
+import 'package:hola_mundo/jugadores.dart';
 
 class MenuPage extends StatelessWidget {
   final String username;
@@ -95,29 +95,29 @@ class MenuPage extends StatelessWidget {
               ],
             ),
             SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    // Agrega la redirección para el cuarto botón
-                  },
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Image.asset(
-                        'assets/boton4.png'), // Ajusta la ruta de la imagen
-                  ),
-                ),
-              ],
-            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //   children: [
+            //     GestureDetector(
+            //       onTap: () {
+            //         // Agrega la redirección para el cuarto botón
+            //       },
+            //       child: Container(
+            //         width: 100,
+            //         height: 100,
+            //         decoration: BoxDecoration(
+            //           color: Colors.red,
+            //           borderRadius: BorderRadius.circular(10),
+            //         ),
+            //         child: Image.asset(
+            //             'assets/boton4.png'), // Ajusta la ruta de la imagen
+            //       ),
+            //     ),
+            //   ],
+            // ),
           ],
         ),
-      ),
-    );
-  }
+    ),
+);
+}
 }

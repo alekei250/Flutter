@@ -5,13 +5,13 @@ class JugadoresApp extends StatelessWidget {
 
   JugadoresApp({required this.equipo});
 
-  // Lista ficticia de jugadores, puedes obtenerla de tu modelo de datos o base de datos
-  final List<String> jugadores = [
-    'Jugador 1',
-    'Jugador 2',
-    'Jugador 3',
-    'Jugador 4',
-    'Jugador 5'
+  // Lista de rutas de imágenes, ajusta las rutas según la ubicación de tus imágenes
+  final List<String> imagenes = [
+    'assets/america.png',
+    'assets/america.png',
+    'assets/america.png',
+    'assets/america.png',
+    'assets/america.png',
   ];
 
   @override
@@ -21,10 +21,15 @@ class JugadoresApp extends StatelessWidget {
         title: Text('Jugadores de $equipo'),
       ),
       body: ListView.builder(
-        itemCount: jugadores.length,
+        itemCount: imagenes.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(jugadores[index]),
+          return Container(
+            padding: EdgeInsets.all(8.0),
+            child: Image.asset(
+              imagenes[index], // Ruta de la imagen
+              width: 100,
+              height: 100,
+            ),
           );
         },
       ),
