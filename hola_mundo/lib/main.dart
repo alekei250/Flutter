@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Login with Time',
+      title: 'Login with Timer',
       theme: ThemeData(
         primaryColor: Colors.blue,
         scaffoldBackgroundColor: Color.fromARGB(255, 253, 155, 143),
