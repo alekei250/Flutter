@@ -32,29 +32,14 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
 
   void _login() {
-    if (_usernameController.text == 'alekei25' &&
-        _passwordController.text == 'alekei25*') {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-            builder: (context) => MenuPage(username: _usernameController.text)),
-      );
-    } else {
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text('Error de inicio de sesión'),
-          content:
-              Text('Usuario o contraseña incorrectas. Inténtalo de nuevo.'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text('OK'),
-            ),
-          ],
-        ),
-      );
-    }
+    // Puedes agregar lógica de verificación de usuario y contraseña aquí.
+    // En este caso, simplemente redirige al menú.
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => MenuPage(username: _usernameController.text),
+      ),
+    );
   }
 
   void _olvidasteContrasena() {
@@ -127,6 +112,60 @@ class _LoginPageState extends State<LoginPage> {
             TextButton(
               onPressed: _olvidasteContrasena,
               child: Text('¿Olvidaste la contraseña?'),
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => EnConstruccionPage()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.purple,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                  ),
+                  child: Text('Nube'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => EnConstruccionPage()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.purple,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                  ),
+                  child: Text('Compartir'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => EnConstruccionPage()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.purple,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                  ),
+                  child: Text('Imprimir'),
+                ),
+              ],
             ),
           ],
         ),
