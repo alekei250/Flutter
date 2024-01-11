@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hola_mundo/cronometro.dart'; // Importa la página a la que deseas redirigir
+import 'package:hola_mundo/cronometro.dart';
+import 'package:hola_mundo/equipos.dart';
 
 class MenuPage extends StatelessWidget {
   final String username;
@@ -39,12 +40,15 @@ class MenuPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Image.asset(
-                        'assets/boton1.png'), // Ajusta la ruta de la imagen
+                        'assets/crono.png'), // Ajusta la ruta de la imagen
                   ),
                 ),
                 GestureDetector(
                   onTap: () {
-                    // Agrega la redirección para el segundo botón
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Equipo()),
+                    );
                   },
                   child: Container(
                     width: 100,

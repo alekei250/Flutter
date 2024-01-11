@@ -22,6 +22,7 @@ flutter:
   assets:
     - assets/atlas.png
     - assets/crono.png
+    - assets/equipo.png
     - assets/america.png
     - assets/atleticosl.png
     - assets/cruzazul.png
